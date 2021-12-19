@@ -20,6 +20,7 @@ we filter the data based on a passed set of parameters.
 **Scalar Function:** A Scalar UDF always returns a single (scalar) value. A Scalar UDF can accept 0 to
 many input parameters and will return a single value. Here is an example of scalar function which
 takes two input parameters and returns the multiplied value:
+
 `
 Create Function dbo.MultiplyValues(@Value1 Float, @Value2 Float)
   Returns Float
@@ -33,6 +34,7 @@ go
 **Inline Function:** An inline table valued function returns a table variable instead of scalar value. The
 function body in case of inline function contains only one single SELECT statement. Here is an
 example:
+
 `
 Create Function dbo.GetEmployeeDetailsByDept(@DeptName Varchar(50))
   Returns Table
@@ -47,6 +49,7 @@ GO
 **Multi-Statement Function:** A multi-statement function also returns a table and is different from
 Inline function by only the fact that it can have multiple SELECT statements inside the body as
 opposed to only one in inline function. Here is an example:
+
 `
 Create Function dbo.GetSalesByCustumerRegion(@pRegionName Varchar(50))
 RETURNS @vSalesByRegion Table
